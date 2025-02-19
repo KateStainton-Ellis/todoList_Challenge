@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+    <!-- Main Content -->
+    <main class="main_content">
+        <!-- Task Input Area -->
+        <h2>New Task</h2>
+        <div class="input_container">
+            <input type="text" id="user_input" name="user_input" placeholder="Enter a new task">
+            <button id="new_task_button" class="add_button">Add</button>
+        </div>
+        <!-- Task List Table -->
+        <h2>Task List</h2>
+        <table class="task_table" id="task_table">
+            <!-- Labels for table columns -->
+             <thead>
+                <tr>
+                    <th id="task_label">Task</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="task_table_body">
+                <!-- Example of row structure, once rendered -->
+                <!-- 
+                <tr>
+                    <td class="todoListItem">Do something</td>
+                    <td><button class="delete_button">Delete</button></td>
+                    <td><button class="edit_button">Edit</button></td>
+                </tr> 
+                -->
+            </tbody>
+        </table>
+    </main>
+    <script src="./assets/js/todo_script.js"></script>   
+</body>
+</html>

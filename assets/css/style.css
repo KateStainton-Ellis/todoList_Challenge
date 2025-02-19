@@ -1,0 +1,154 @@
+/* Use global css variables for colours */
+/* Consistent, easily-modifiable */
+:root {
+    --white: white;
+    --mid-blue : #1a74c7;
+    --light-blue: #2087e7; 
+    --mid-green: #18ad3c;
+    --light-green: #20df4e;
+    --mid-red : #fb2215;
+    --light-red: #fc5b51;
+    --pale-grey: #ddd;
+    --light-bg: #f4f4f4;
+}
+
+/* Include the padding and border in all elements' total width and height */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+/* Header */
+header {
+    background-color:var(--mid-blue);
+    text-align: center;
+    padding: 20px;
+    color: var(--white);
+}
+
+/* Main Content */
+.main_content {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main_content h2 {
+    margin-bottom: 20px;
+}
+
+/* New Task Input Area */
+.input_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid var(--pale-grey);
+    margin-right: 8px;
+    width: 600px;
+}
+
+/* Add base styling for all buttons for consistency */
+button {
+    color: var(--white);
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 60px;
+    font-size: 12px;
+}
+
+/* Button colours with on hover highlight */
+.add_button {
+    background-color: var(--mid-green);
+}
+
+.add_button:hover {
+    background-color: var(--light-green);
+}
+
+.delete_button {
+    background-color: var(--mid-red);
+}
+
+.delete_button:hover {
+    background-color: var(--light-red);
+}
+
+.edit_button {
+    background-color: var(--mid-blue);
+}
+
+.edit_button:hover {
+    background-color: var(--light-blue);
+}
+
+/* Task Table */
+.task_table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.task_table thead {
+    background-color: var(--light-bg);
+}
+
+.task_table th,
+.task_table td {
+    /* padding: 12px; */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid var(--pale-grey);
+    text-align: left;
+}
+
+.task_table #task_label,
+.task_table .todoListItem {
+    width: 600px; /* Line up label with task. TODO - replace in future with flex/grid layout */
+    /* height: 30px;*/
+}
+
+
+/* Set blue outline on editable fields (textNode) when in focus to indicate to user that field is active */
+.editable:focus {
+    border: 1px solid var(--mid-blue);
+    box-shadow: 0 0 3px var(--mid-blue);
+    width: 200px;
+    height: 50px;
+    overflow: hidden; /* Stop the input field from expanding as text is entered */
+}
+
+/* Make responsive for small screen */
+/* Reduce vertical margins and button width */
+@media (max-width: 600px) {
+    .main_content {
+        width: 100%;
+        padding: 10px;
+    }
+    .main_content h2 {
+        margin-bottom: 5px;
+    }
+    .input_container {
+        margin-bottom: 5px;
+    }
+    button {
+        width: 50px;
+        padding: 4px 6px;
+    }
+}
